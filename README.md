@@ -1,9 +1,9 @@
 # Atividades de Programação Orientada a Objetos (POO) ☕🐍
 
-Repositório destinado ao armazenamento e organização das atividades práticas desenvolvidas na disciplina de **Programação Orientada a Objetos**, ministrada pelo professor **Gilbert Silva** no curso de TADS - IFRN.
+Repositório destinado ao armazenamento e organização das atividades práticas desenvolvidas na disciplina de **Programação Orientada a Objetos**, ministrada pelo professor **Gilbert Azevedo** no curso de TADS - IFRN.
 
 ## 📌 Sobre a Disciplina
-A disciplina foca na transição do paradigma estrutural para o orientado a objetos. Embora a linguagem base da disciplina seja Python, as implementações aqui serão realizadas predominantemente em **Java**, com exercícios eventuais em **Python** para fins de comparação e fixação.
+A disciplina foca na transição do paradigma estrutural para o orientado a objetos. Embora a linguagem base da disciplina seja Python, as implementações aqui serão realizadas em **Java**.
 
 ### Conceitos Explorados:
 * **Classes e Objetos:** Estruturação de entidades e instanciamênto.
@@ -15,8 +15,7 @@ A disciplina foca na transição do paradigma estrutural para o orientado a obje
 
 ## 🛠️ Tecnologias Utilizadas
 * **Linguagem Principal:** Java (JDK 17+)
-* **Linguagem Secundária:** Python 3.14
-* **IDE/Editor:** VS Code / IntelliJ IDEA
+* **IDE/Editor:** IntelliJ IDEA
 
 ---
 
@@ -24,9 +23,9 @@ A disciplina foca na transição do paradigma estrutural para o orientado a obje
 
 As atividades estão organizadas em pastas por listas de exercícios.
 
-| Lista | Descrição | Python | Java |
-| :--- | :--- | :---: | :---: |
-| **Lista 01** | Introdução a Classes e Métodos | ✅ |⏳ |
+| Lista | Status | Conteúdo Principal |
+| :--- | :--- | :--- |
+| 🟦 **Lista 01** | Em Andamento | **Introdução a Classes e Métodos** |
 
 ---
 
@@ -38,13 +37,6 @@ Para compilar e rodar os arquivos Java:
 javac NomeDoArquivo.java
 java NomeDoArquivo
 ```
-
-### 🐍 Python
-Para executar os scripts Python:
-```
-python nome_do_arquivo.py
-```
-
 ---
 
 ## 👨‍💻 Autor
