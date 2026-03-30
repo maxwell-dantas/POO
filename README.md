@@ -26,7 +26,8 @@ As atividades estão organizadas em pastas por listas de exercícios.
 | Lista | Status | Conteúdo Principal |
 | :--- | :--- | :--- |
 | 🟩 **Lista 01** | Concluída | **Introdução a Classes e Métodos** |
-| 🟦 **Lista 02** | Em Andamento | **Encapsulamento** |
+| 🟩 **Lista 02** | Concluída | **Encapsulamento** |
+| 🟦 **Lista 03** | Em Andamento | **Construtores e ToString** |
 
 ---
 
