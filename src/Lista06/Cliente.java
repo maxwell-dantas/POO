@@ -6,12 +6,13 @@ public class Cliente {
     private String email;
     private String telefone;
 
-    public Cliente(int id, String nome, String email, String telefone) {
-        this.setId(id);
+    public Cliente(String nome, String email, String telefone) {
         this.setNome(nome);
         this.setEmail(email);
         this.setTelefone(telefone);
     }
+
+    public Cliente(int id) {this.setId(id);}
 
     public void setId(int id) {this.id = id;}
     public void setNome(String nome) {this.nome = nome;}
