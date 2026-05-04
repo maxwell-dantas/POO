@@ -1,4 +1,4 @@
-package Lista06;
+package comercioEletronico.model;
 
 public class Cliente {
     private int id;
@@ -12,8 +12,6 @@ public class Cliente {
         this.setTelefone(telefone);
     }
 
-    public Cliente(int id) {this.setId(id);}
-
     public void setId(int id) {this.id = id;}
     public void setNome(String nome) {this.nome = nome;}
     public void setEmail(String email) {this.email = email;}
@@ -26,6 +24,6 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "ID: " + this.id + "\nNome: " + this.nome + "\nEmail: " + this.email + "\nTelefone: " + this.telefone;
+        return this.id + " - " + this.nome + " - " + this.email + " - " + this.telefone;
     }
 }
