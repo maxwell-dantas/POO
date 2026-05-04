@@ -1,4 +1,5 @@
-package Lista06;
+package comercioEletronico.dao;
+import comercioEletronico.model.Cliente;
 import java.io.IOException;
 import java.util.ArrayList;
 import com.google.gson.Gson;
@@ -13,12 +14,12 @@ public class ClienteDAO {
 
     public void inserir(Cliente cliente) {
         this.clientes.add(cliente);
+        this.salvar();
     }
 
     public Cliente listarId(int id) {
-        this.abrir();
-        for (Cliente objeto : this.clientes) {
-            if (objeto.getId() == id) {return objeto;}
+        for (Cliente cliente : this.clientes) {
+            if (cliente.getId() == id) {return cliente;}
         }
         return null;
     }
@@ -31,22 +32,17 @@ public class ClienteDAO {
     }
 
     public void excluir(Cliente cliente) {
-        for (int i = 0; i < this.clientes.size(); i++) {
-            if (cliente.getId() == this.clientes.get(i).getId()) {
-                this.clientes.remove(i);
-                System.out.println("Cliente removido com sucesso!");
-                this.salvar();
-                break;
-            }
-        }
+        this.clientes.remove(cliente);
+        this.salvar();
     }
 
     public ArrayList<Cliente> listar() {return this.clientes;}
 
+    // Busca meu arquivo e insere ele na memória do programa
     public void abrir() {
         try {
             // 1. Abre o leitor para o caminho onde o arquivo foi salvo
-            FileReader leitor = new FileReader("src/Lista06/clientes.json");
+            FileReader leitor = new FileReader("src/comercioEletronico/data/clientes.json");
 
             // 2. Pega o tipo da lista para evitar a amnésia do Java runtime
             Type listaTipo = new TypeToken<ArrayList<Cliente>>(){}.getType();
@@ -54,22 +50,23 @@ public class ClienteDAO {
             // 3. O Gson lê o arquivo e já preenche a lista de uma vez
             this.clientes = gson.fromJson(leitor, listaTipo);
 
+            if (this.clientes == null) {
+                this.clientes = new ArrayList<>();
+            }
+
             // 4. fecha o leitor
             leitor.close();
 
-            System.out.println("Dados carregados com sucesso!");
-
         } catch (IOException e) {
-            // Caso o arquivo não exista ainda, criamos uma lista vazia para evitar erros
+            // Caso o arquivo não exista ainda, cria uma lista vazia para evitar erros (o método gson.fromJson)
             this.clientes = new ArrayList<>();
-            System.out.println("Arquivo não encontrado. Iniciando lista vazia...");
         }
     }
 
     public void salvar() {
         try {
             // 1. Abertura de arquivo
-            FileWriter escritor = new FileWriter("src/Lista06/clientes.json");
+            FileWriter escritor = new FileWriter("src/comercioEletronico/data/clientes.json");
 
             // 2. Converte a lista de objetos em texto Json
             String textoJson = gson.toJson(this.clientes);
@@ -79,8 +76,6 @@ public class ClienteDAO {
 
             // 4. Fecha o arquivo para confirmar a gravação
             escritor.close();
-
-            System.out.println("Dados salvos com sucesso!");
 
         } catch (IOException e) {
             System.out.println("Ocorreu um erro ao salvar o arquivo: " + e.getMessage());
